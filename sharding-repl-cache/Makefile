@@ -1,3 +1,5 @@
+include .env
+
 start: run-containers init-db add-users
 
 stop:
@@ -23,5 +25,10 @@ add-users:
 test:
 	@echo "Testing"
 	@sh scripts/count_users.sh
-	time curl --location 'http://localhost:8080/helloDoc/users' --header 'accept: application/json' >/dev/null
-	time curl --location 'http://localhost:8080/helloDoc/users' --header 'accept: application/json' >/dev/null
+	time curl --location '${GET_USERS_URL}' --header 'accept: application/json' >/dev/null
+	time curl --location '${GET_USERS_URL}' --header 'accept: application/json' >/dev/null
+
+show_env:
+	@echo ${NAME}
+	@echo ${GET_USERS_URL}
+
