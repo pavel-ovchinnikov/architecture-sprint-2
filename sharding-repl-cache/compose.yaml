@@ -1,4 +1,4 @@
-name: ${NAME}
+name: mongo-sharding-repl
 services:
   configSrv:
     image: mongo:latest
