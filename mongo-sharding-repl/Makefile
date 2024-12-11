@@ -24,5 +24,4 @@ add-users:
 
 test:
 	@echo "Testing"
-	@sh scripts/count_users_shard1.sh
-	@sh scripts/count_users_shard2.sh
+	@sh scripts/count_users.sh

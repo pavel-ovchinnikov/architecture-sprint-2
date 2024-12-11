@@ -6,7 +6,7 @@ docker cp scripts/init_config_server.js configSrv:/tmp && docker exec -it config
 # init rs1
 docker cp scripts/init_rs1.js shard1-1:/tmp && docker exec -it shard1-1 mongosh --port 27018 --f /tmp/init_rs1.js
 
-# # init rs2
+# init rs2
 docker cp scripts/init_rs2.js shard2-1:/tmp && docker exec -it shard2-1 mongosh --port 27021 --f /tmp/init_rs2.js
 
 # init router
